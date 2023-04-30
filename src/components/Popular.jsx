@@ -16,7 +16,9 @@ const Popular = () => {
         try {
             const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_KEY}&number=9`)
             const data = await api.json();
+            console.log('test', data.recipes)
             setPopular(data.recipes);
+            console.log(data.recipes)
         }
         catch (error) {
             console.log(error)
@@ -25,26 +27,21 @@ const Popular = () => {
 
     return (
         <div>
-            {popular?.map((recipe) => {
-                return (
-                    <Wrapper key={recipe?.id}>
-                        <h3>Popular Picks</h3>
-                        <Splide>
-                            {popular?.map((recipe) => {
-                                return (
-                                    <SplideSlide>
-                                        <Card>
-                                            <p>{recipe?.title}</p>
-                                            <img src={recipe.image} alt={recipe.title} />
-                                        </Card>
-                                    </SplideSlide>
-                                );
-                            })}
-                        </Splide>
-                    </Wrapper>
-                )
-            })
-            }
+            <Wrapper>
+                <h3>Popular Picks</h3>
+                <Splide options={{perPage:4, arrows: false, pagination:false, drag: 'free', gap:'5rem',}}>
+                    {popular?.map((recipe) => {
+                        return (
+                            <SplideSlide>
+                                <Card key={recipe?.id}>
+                                    <p>{recipe?.title}</p>
+                                    <img src={recipe?.image} alt={recipe.title} />
+                                </Card>
+                            </SplideSlide>
+                        );
+                    })}
+                </Splide>
+            </Wrapper>
         </div>
     )
 }
