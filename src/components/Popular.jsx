@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Wrapper from "./UI/Wrapper/Wrapper";
 import Card from "./UI/Wrapper/Card/Card";
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/css';
 
 const Popular = () => {
 
@@ -27,14 +29,18 @@ const Popular = () => {
                 return (
                     <Wrapper key={recipe?.id}>
                         <h3>Popular Picks</h3>
-                        {popular?.map((recipe) => {
-                            return (
-                                <Card>
-                                    <p>{recipe?.title}</p>
-                                    <img src={recipe.image} alt={recipe.title} />
-                                </Card>
-                            );
-                        })}
+                        <Splide>
+                            {popular?.map((recipe) => {
+                                return (
+                                    <SplideSlide>
+                                        <Card>
+                                            <p>{recipe?.title}</p>
+                                            <img src={recipe.image} alt={recipe.title} />
+                                        </Card>
+                                    </SplideSlide>
+                                );
+                            })}
+                        </Splide>
                     </Wrapper>
                 )
             })
