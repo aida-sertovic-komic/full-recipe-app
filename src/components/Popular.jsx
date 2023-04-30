@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Wrapper from "./UI/Wrapper/Wrapper";
+import Card from "./UI/Wrapper/Card/Card";
 
 const Popular = () => {
 
@@ -25,9 +26,16 @@ const Popular = () => {
             {popular?.map((recipe) => {
                 return (
                     <Wrapper key={recipe?.id}>
-                        <p>{recipe?.title}</p>
+                        <h3>Popular Picks</h3>
+                        {popular?.map((recipe) => {
+                            return (
+                                <Card>
+                                    <p>{recipe?.title}</p>
+                                    <img src={recipe.image} alt={recipe.title} />
+                                </Card>
+                            );
+                        })}
                     </Wrapper>
-
                 )
             })
             }
