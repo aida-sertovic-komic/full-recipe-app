@@ -2,6 +2,7 @@ import { useEffect,useState } from 'react';
 import { Splide,SplideSlide } from '@splidejs/react-splide';
 import Card from './UI/Card/Card';
 import Wrapper from './UI/Wrapper/Wrapper';
+import Gradient from './UI/Gradient/Gradient';
 
 const Veggie = () => {
     const [veggie, setVeggie] = useState([]);
@@ -31,13 +32,14 @@ const Veggie = () => {
         <div>
             <Wrapper>
                 <h3>Veggie Picks</h3>
-                <Splide options={{ perPage: 4, arrows: false, pagination: false, drag: 'free', gap: '5rem', }}>
+                <Splide options={{ perPage: 3, arrows: false, pagination: false, drag: 'free', gap: '5rem', }}>
                     {veggie?.map((recipe) => {
                         return (
                             <SplideSlide key={recipe.id}>
                                 <Card key={recipe?.id}>
                                     <p>{recipe?.title}</p>
                                     <img src={recipe?.image} alt={recipe.title} />
+                                    <Gradient />
                                 </Card>
                             </SplideSlide>
                         );

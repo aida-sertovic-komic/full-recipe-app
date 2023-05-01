@@ -3,6 +3,7 @@ import Wrapper from "./UI/Wrapper/Wrapper";
 import Card from "./UI/Card/Card";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/css';
+import Gradient from "./UI/Gradient/Gradient";
 
 const Popular = () => {
 
@@ -41,6 +42,7 @@ const Popular = () => {
                                 <Card key={recipe?.id}>
                                     <p>{recipe?.title}</p>
                                     <img src={recipe?.image} alt={recipe.title} />
+                                    <Gradient />
                                 </Card>
                             </SplideSlide>
                         );

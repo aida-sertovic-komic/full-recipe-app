@@ -1,8 +1,8 @@
-import './Gradient.module.css';
+import classes from './Gradient.module.css';
 
 const Gradient = (props) => {
     return (
-        <div>
+        <div className={classes.gradient}>
             {props.children}
         </div>
     )
