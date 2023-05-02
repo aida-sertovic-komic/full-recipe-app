@@ -1,15 +1,12 @@
-import classes from './Cuisine.module.css';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Grid from '../../components/UI/Grid/Grid';
+import Card from '../../components/UI/Card/Card';
 
 const Cuisine = () => {
     const [cuisine, setCuisine] = useState([]);
     let params = useParams();
-
-    useEffect(() => {
-        getCuisine(params.type);
-    }, [params.type]);
 
     const getCuisine = async (name) => {
         const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_KEY}&cuisine=${name}`);
@@ -17,11 +14,23 @@ const Cuisine = () => {
         setCuisine(recipes.results)
     }
 
-    return <div>
+    useEffect(() => {
+        getCuisine(params.name);
+    }, [params.name]);
 
-        </div>
+    return <Grid>
+        {cuisine.map((item) => {
+            return (
+                <Card key={item.id}>
+                    {/* <Link /> */}
+                    <img src={item.image} alt={item.title} />
+                    <h4>{item.title}</h4>
+                </Card>
+            )
+        })}
+    </Grid>
 
-    
+
 }
 
 export default Cuisine;

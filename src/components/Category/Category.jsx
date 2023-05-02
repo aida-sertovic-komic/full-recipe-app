@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import classes from './Category.module.css';
 
-const Category = (props) => {
+const Category = () => {
     return(
         <div className={classes.category}>
             <NavLink to={'/cuisine/Italian'}>
@@ -15,12 +15,12 @@ const Category = (props) => {
                 <FaHamburger />
                 <h4>American</h4>
             </NavLink>
-            <NavLink>
-                <GiNoodles to={'/cuisine/Thai'}/>
+            <NavLink to={'/cuisine/Thai'}>
+                <GiNoodles/>
                 <h4>Thai</h4>
             </NavLink>
-            <NavLink>
-                <GiChopsticks to={'cuisine/Japanese'}/>
+            <NavLink to={'cuisine/Japanese'}>
+                <GiChopsticks/>
                 <h4>Japanese</h4>
             </NavLink>
         </div>
