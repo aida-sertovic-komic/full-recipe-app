@@ -3,26 +3,23 @@ import { GiNoodles, GiChopsticks} from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 
 import classes from './Category.module.css';
+import StyledLink from '../UI/StyledLink/StyledLink';
 
 const Category = () => {
     return(
         <div className={classes.category}>
-            <NavLink to={'/cuisine/Italian'}>
+            <StyledLink title={'Italian'}>
                 <FaPizzaSlice />
-                <h4>Italian</h4>
-            </NavLink>
-            <NavLink to={'/cuisine/American'}>
+            </StyledLink>
+            <StyledLink title={'American'}>
                 <FaHamburger />
-                <h4>American</h4>
-            </NavLink>
-            <NavLink to={'/cuisine/Thai'}>
+            </StyledLink>
+            <StyledLink title={'Thai'}>
                 <GiNoodles/>
-                <h4>Thai</h4>
-            </NavLink>
-            <NavLink to={'cuisine/Japanese'}>
+            </StyledLink>
+            <StyledLink title={'Japanese'}>
                 <GiChopsticks/>
-                <h4>Japanese</h4>
-            </NavLink>
+            </StyledLink>
         </div>
     )
 }

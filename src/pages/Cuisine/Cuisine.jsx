@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Grid from '../../components/UI/Grid/Grid';
 import Card from '../../components/UI/Card/Card';
+import Grid from '../../components/UI/Grid/Grid';
 
 const Cuisine = () => {
     const [cuisine, setCuisine] = useState([]);
@@ -34,3 +33,4 @@ const Cuisine = () => {
 }
 
 export default Cuisine;
+
