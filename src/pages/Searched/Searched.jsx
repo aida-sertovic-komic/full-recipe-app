@@ -16,7 +16,6 @@ const Searched = () => {
 
     useEffect(() => {
         getSearched(params.searchTerm);
-        console.log(searchedRecipes)
     }, [params.searchTerm])
 
     return (
