@@ -5,6 +5,7 @@
     position: relative;
 }
 
+
 .card img {
     border-radius: 2rem;
     position: absolute;
@@ -12,19 +13,26 @@
     width: 80%;
     height: 80%;
     object-fit: cover;
+
 }
 
-.card p{
- position: absolute;
- z-index: 10;
- left: 50%;
- bottom: 0%;
- transform: translate(-50%, 0%);
- color: white;
- font-weight: 600;
- font-size: 1rem;
- height: 80%;
- display: flex;
- justify-content: center;
- align-items: center;
+.card:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.card span,
+p {
+    position: absolute;
+    z-index: 10;
+    left: 45%;
+    bottom: 0%;
+    transform: translate(-50%, 0%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

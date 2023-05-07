@@ -24,7 +24,7 @@ const Searched = () => {
             return (
                 <Card key={item.id}>
                     <img src={item.image} alt={item.title} />
-                    <h4>{item.title}</h4>
+                    <span>{item.title}</span>
                 </Card>
             )
         })}

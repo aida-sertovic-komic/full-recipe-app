@@ -23,7 +23,7 @@ const Cuisine = () => {
                 <Card key={item.id}>
                     {/* <Link /> */}
                     <img src={item.image} alt={item.title} />
-                    <h4>{item.title}</h4>
+                    <span>{item.title}</span>
                 </Card>
             )
         })}
