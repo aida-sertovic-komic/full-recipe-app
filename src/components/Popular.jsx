@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import Wrapper from "./UI/Wrapper/Wrapper";
-import Card from "./UI/Card/Card";
+import { useEffect, useState } from 'react;
+import Wrapper from './UI/Wrapper/Wrapper';
+import Card from './UI/Card/Card';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/css';
-import Gradient from "./UI/Gradient/Gradient";
+import Gradient from './UI/Gradient/Gradient';
 
 const Popular = () => {
 
