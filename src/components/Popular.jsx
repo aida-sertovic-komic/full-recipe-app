@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react;
+import { useEffect, useState } from 'react';
 import Wrapper from './UI/Wrapper/Wrapper';
 import Card from './UI/Card/Card';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
