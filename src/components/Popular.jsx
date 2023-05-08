@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import Wrapper from './UI/Wrapper/Wrapper';
-import Card from './UI/Card/Card';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/css';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Card from './UI/Card/Card';
 import Gradient from './UI/Gradient/Gradient';
-
+import Wrapper from './UI/Wrapper/Wrapper';
 const Popular = () => {
 
     const [popular, setPopular] = useState([]);
@@ -39,11 +39,12 @@ const Popular = () => {
                     {popular?.map((recipe) => {
                         return (
                             <SplideSlide key={recipe.id}>
-                                <Card key={recipe?.id}>
+                               <Link to={"/recipe/" + recipe.id } >
+                               <Card key={recipe?.id}>
                                     <p>{recipe?.title}</p>
                                     <img src={recipe?.image} alt={recipe.title} />
                                     <Gradient />
-                                </Card>
+                                </Card></Link>
                             </SplideSlide>
                         );
                     })}

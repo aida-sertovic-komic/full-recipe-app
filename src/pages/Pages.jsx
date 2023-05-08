@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import Cuisine from './Cuisine';
-import Home from './Home"';
+import Home from './Home';
 import Recipe from './Recipe/Recipe';
 import Searched from './Searched';
 

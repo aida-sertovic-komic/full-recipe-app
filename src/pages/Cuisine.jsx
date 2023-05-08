@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Grid from '../components/UI/Grid/Grid';
 import Card from '../components/UI/Card/Card';
 
@@ -21,9 +21,10 @@ const Cuisine = () => {
         {cuisine.map((item) => {
             return (
                 <Card key={item.id}>
-                    {/* <Link /> */}
-                    <img src={item.image} alt={item.title} />
-                    <span>{item.title}</span>
+                    <Link to={'/recipe/' + item.id}>
+                        <img src={item.image} alt={item.title} />
+                        <span>{item.title}</span>
+                    </Link>
                 </Card>
             )
         })}
