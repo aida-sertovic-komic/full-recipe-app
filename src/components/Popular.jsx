@@ -41,12 +41,11 @@ const Popular = () => {
                             <SplideSlide key={recipe.id}>
                                 <Link to={"/recipe/" + recipe.id} >
                                     <Card key={recipe?.id}>
-                                        <Link to={"/recipe/" + recipe.id}>
-                                            <p>{recipe?.title}</p>
-                                            <img src={recipe?.image} alt={recipe.title} />
-                                        </Link>
+                                        <p>{recipe?.title}</p>
+                                        <img src={recipe?.image} alt={recipe.title} />
                                         <Gradient />
-                                    </Card></Link>
+                                    </Card>
+                                </Link>
                             </SplideSlide>
                         );
                     })}

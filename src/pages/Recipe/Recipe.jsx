@@ -5,6 +5,7 @@ import classes from './Recipe.module.css';
 
 const Recipe = () => {
     const [details, setDetails] = useState({});
+    const [activeTab, setActiveTab] = useState('ingredients');
     let params = useParams();
 
     const getRecipeInformation = async () => {
@@ -24,11 +25,14 @@ const Recipe = () => {
             </div>
             <div className={classes.ingredientWrapper}>
                 <div className={classes.buttons}>
-                    <button>Ingredients</button>
-                    <button>Instructions</button>
+                    <button onClick={() => {
+                        setActiveTab("ingredients")
+                    }} >Ingredients</button>
+                    <button onClick={() => {
+                        setActiveTab("instructions")
+                    }}>Instructions</button>
                 </div>
-                <div className={classes.ingredients}></div>
-                <div className={classes.instructions}></div>
+                <div className={classes.instructions}>{details.instructions}</div>
             </div>
         </div>
 
