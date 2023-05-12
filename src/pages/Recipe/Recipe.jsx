@@ -22,7 +22,14 @@ const Recipe = () => {
             <div className={classes.imageWrapper}>
                 <img className={classes.image} src={details.image} alt={details.title} />
             </div>
-            <div>Ingredients and Instruction</div>
+            <div className={classes.ingredientWrapper}>
+                <div className={classes.buttons}>
+                    <button>Ingredients</button>
+                    <button>Instructions</button>
+                </div>
+                <div className={classes.ingredients}></div>
+                <div className={classes.instructions}></div>
+            </div>
         </div>
 
     )
