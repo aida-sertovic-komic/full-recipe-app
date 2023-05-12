@@ -39,12 +39,14 @@ const Popular = () => {
                     {popular?.map((recipe) => {
                         return (
                             <SplideSlide key={recipe.id}>
-                               <Link to={"/recipe/" + recipe.id } >
-                               <Card key={recipe?.id}>
-                                    <p>{recipe?.title}</p>
-                                    <img src={recipe?.image} alt={recipe.title} />
-                                    <Gradient />
-                                </Card></Link>
+                                <Link to={"/recipe/" + recipe.id} >
+                                    <Card key={recipe?.id}>
+                                        <Link to={"/recipe/" + recipe.id}>
+                                            <p>{recipe?.title}</p>
+                                            <img src={recipe?.image} alt={recipe.title} />
+                                        </Link>
+                                        <Gradient />
+                                    </Card></Link>
                             </SplideSlide>
                         );
                     })}
