@@ -6,12 +6,15 @@ import classes from './Recipe.module.css';
 const Recipe = () => {
     const [details, setDetails] = useState({});
     const [activeTab, setActiveTab] = useState('ingredients');
+    const [ingredients, setIngredients] = useState([]);
     let params = useParams();
 
     const getRecipeInformation = async () => {
         const data = await fetch(`https://api.spoonacular.com/recipes/${params.id}/information?&apiKey=${process.env.REACT_APP_KEY}`)
         const detailData = await data.json();
         setDetails(detailData);
+        setIngredients(details?.extendedIngredients)
+        console.log(ingredients)
     }
 
     useEffect(() => {
@@ -25,14 +28,15 @@ const Recipe = () => {
             </div>
             <div className={classes.ingredientWrapper}>
                 <div className={classes.buttons}>
-                    <button onClick={() => {
-                        setActiveTab("ingredients")
+                    <button value="ingredients" onClick={(input) => {
+                        setActiveTab(input.target.value)
+
                     }} >Ingredients</button>
-                    <button onClick={() => {
-                        setActiveTab("instructions")
+                    <button value="instructions" onClick={(input) => {
+                        setActiveTab(input.target.value)
                     }}>Instructions</button>
                 </div>
-                <div className={classes.instructions}>{details.instructions}</div>
+                {activeTab === 'ingredients' ? <div className={classes.ingredients}>{ingredients?.map((item) => <li key={item.id}>{item.original}</li>)}</div> : <div dangerouslySetInnerHTML={{__html:details?.instructions}} className={classes.ingredients}></div>}
             </div>
         </div>
 
