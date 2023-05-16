@@ -37,18 +37,21 @@
 .buttons>button {
     padding: 12px 20px;
     border-radius: 0;
-    background: linear-gradient(35deg, #494949, #313131);
-    color: white;
+    background: #fff;
+    color: linear-gradient(35deg, #494949, #313131);
     font-size: 1rem;
-    border: none;
+    border: 2px solid #333;
 }
 
-.buttons > button:hover {
-    background: linear-gradient(to right, #f27121, #e94057);
+.buttons>button:hover {
+    background: linear-gradient(35deg, #494949, #313131);
+    border: 1px solid #fff;
+    color: #fff;
 }
 
-.buttons > button:focus {
-    background: linear-gradient(to right, #f27121, #e94057);
+.buttons>button:focus {
+    background: linear-gradient(35deg, #494949, #313131);
+    color: #fff;
 
 }
 
