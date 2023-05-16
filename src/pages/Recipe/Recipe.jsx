@@ -36,7 +36,7 @@ const Recipe = () => {
                         setActiveTab(input.target.value)
                     }}>Instructions</button>
                 </div>
-                {activeTab === 'ingredients' ? <div className={classes.ingredients}>{ingredients?.map((item) => <li key={item.id}>{item.original}</li>)}</div> : <div dangerouslySetInnerHTML={{__html:details?.instructions}} className={classes.ingredients}></div>}
+                {activeTab === 'ingredients' ? <div className={classes.ingredients}>{ingredients?.map((item) => <li key={item.id}>{item.original}</li>)}</div> : <><h5 style={{ paddingTop: '20px'}} dangerouslySetInnerHTML={{ __html: details?.summary }}></h5><div dangerouslySetInnerHTML={{ __html: details?.instructions }} className={classes.ingredients}></div></>}
             </div>
         </div>
 
